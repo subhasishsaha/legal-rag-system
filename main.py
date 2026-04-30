@@ -1,6 +1,6 @@
 import requests
 
-API_URL = "http://127.0.0.1:8000/ask"
+API_URL = "http://legal-rag-system-production-6df2.up.railway.app/ask"
 
 def ask_api(query: str):
     response = requests.post(
@@ -12,6 +12,13 @@ def ask_api(query: str):
     if response.status_code != 200:
         raise Exception(f"API Error: {response.status_code} - {response.text}")
 
+    return response.json()
+
+
+def health_check():
+    response = requests.get("http://legal-rag-system-production-6df2.up.railway.app/health")
+    if response.status_code != 200:
+        raise Exception(f"Health Check Failed: {response.status_code} - {response.text}")
     return response.json()
 
 
