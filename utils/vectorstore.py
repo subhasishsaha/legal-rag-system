@@ -1,7 +1,8 @@
 import logging
 import os
 from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEndpointEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 logger = logging.getLogger(__name__)
 
@@ -15,8 +16,8 @@ def create_vectorstore(documents, persist_directory="./chroma_db", collection_na
         
         logger.info(f"Creating vectorstore with {len(documents)} documents")
         
-        embeddings = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-MiniLM-L6-v2"
+        embeddings = HuggingFaceEndpointEmbeddings(
+            model_name="google/embeddinggemma-300m"
         )
         
         # Create directory if it doesn't exist
@@ -42,8 +43,8 @@ def load_vectorstore(persist_directory="./chroma_db", collection_name="legal_doc
     try:
         logger.info(f"Loading vectorstore from {persist_directory}")
         
-        embeddings = HuggingFaceEmbeddings(
-            model_name="sentence-transformers/all-MiniLM-L6-v2"
+        embeddings = HuggingFaceEndpointEmbeddings(
+            model_name="google/embeddinggemma-300m"
         )
         
         vectorstore = Chroma(
