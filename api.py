@@ -23,7 +23,7 @@ from chains.chains import build_rag_chain
 
 app = FastAPI(title="Legal RAG API", version="1.0.0")
 
-CHROMA_DIR = "./chroma_db"
+CHROMA_DIR = "chroma_db"
 URL = "https://www.scobserver.in/journal/supreme-court-review-top-10-judgements-of-2025/"
 
 

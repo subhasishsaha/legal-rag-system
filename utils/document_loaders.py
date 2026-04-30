@@ -4,7 +4,7 @@ from langchain_community.document_loaders import DirectoryLoader, PyMuPDFLoader,
 
 logger = logging.getLogger(__name__)
 
-def load_pdf_documents(path="./legal-data"):
+def load_pdf_documents(path="legal-data"):
     """Load PDF documents from directory."""
     try:
         if not os.path.exists(path):
