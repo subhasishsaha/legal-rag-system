@@ -7,8 +7,6 @@
 **/__pycache__/
 *.log
 
-# Databases & Data
-chroma_db/
 
 # Documentation
 documentation.json
