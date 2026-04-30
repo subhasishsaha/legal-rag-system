@@ -1,19 +1,22 @@
 from langchain_core.prompts import ChatPromptTemplate, PromptTemplate
 
 subqueries_prompt = PromptTemplate(
-    template = """
-    You are sub-question generator for a Legal RAG System.
-    
-    Your job is to break a question to multiple parts, like a human thinks. 
-    If a question is given to you, you need to ask what things you need to succesfully answer the question.
-    What sub-parts you will need that will support your answer.
-    And then you will generate these questions.
-    Do not give redundant questions.
-    All the sub questions should be from a legal standpoint.
+    template="""
+    You are a legal query decomposition system.
 
-    Question : {query}
+    Given a user question, generate at most 2 concise legal sub-questions
+    that are necessary to answer the query.
+
+    Rules:
+    - Maximum 2 sub-questions
+    - Each must be short and precise
+    - No explanations
+    - No redundancy
+    - Output only the questions as a numbered list
+
+    Question: {query}
     """,
-    input_variables = ["query"]
+        input_variables=["query"]
 )
 
 main_prompt = ChatPromptTemplate(

@@ -1,6 +1,6 @@
 import requests
 
-API_URL = "http://legal-rag-system-production-6df2.up.railway.app/ask"
+API_URL = "https://legal-rag-system-production-6df2.up.railway.app/ask"
 
 def ask_api(query: str):
     response = requests.post(
@@ -16,7 +16,7 @@ def ask_api(query: str):
 
 
 def health_check():
-    response = requests.get("http://legal-rag-system-production-6df2.up.railway.app/health")
+    response = requests.get("https://legal-rag-system-production-6df2.up.railway.app/health")
     if response.status_code != 200:
         raise Exception(f"Health Check Failed: {response.status_code} - {response.text}")
     return response.json()

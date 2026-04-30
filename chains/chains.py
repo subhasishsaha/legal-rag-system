@@ -31,7 +31,7 @@ def build_rag_chain(vectorstore):
 
     retriever = vectorstore.as_retriever(
         search_type="similarity",
-        search_kwargs={"k": 5}
+        search_kwargs={"k": 3}
     )
 
     sub_chain = subquery_chain()
