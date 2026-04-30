@@ -1,0 +1,11 @@
+# Environments & Cache
+.hf_cache/
+.env
+.venv/
+
+# Python & System
+**/__pycache__/
+*.log
+
+# Databases & Data
+chroma_db/
