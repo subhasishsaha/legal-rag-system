@@ -64,7 +64,13 @@ def initialize_pipeline():
         logger.error(f"Pipeline initialization failed: {e}", exc_info=True)
         raise
 
-qa_chain = initialize_pipeline()
+qa_chain = None
+
+@app.on_event("startup")
+async def startup_event():
+    global qa_chain
+    logger.info("Initializing RAG pipeline...")
+    qa_chain = initialize_pipeline()
 
 
 # ---- Request/Response schema ----
