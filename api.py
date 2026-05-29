@@ -21,7 +21,7 @@ from utils.preprocessing import preprocess_documents
 from utils import document_loaders, text_splitter, vectorstore as vs
 from chains.chains import build_rag_chain
 
-app = FastAPI(title="Legal RAG API", version="1.0.0")
+app = FastAPI(title="Legal RAG API", version="2.0.1")
 
 CHROMA_DIR = "chroma_db"
 URL = "https://www.scobserver.in/journal/supreme-court-review-top-10-judgements-of-2025/"

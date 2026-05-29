@@ -4,7 +4,7 @@ from utils import prompts
 from langchain_core.runnables import RunnablePassthrough, RunnableLambda, RunnableMap
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.output_parsers import StrOutputParser
-from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
+
 
 import logging
 
