@@ -6,3 +6,9 @@ __pycache__
 *.pyc
 .env
 .env.*
+.hf_cache
+documentation.json
+app.log
+LICENSE
+README.md
+.gitignore
